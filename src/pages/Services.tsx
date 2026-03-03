@@ -1,0 +1,178 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Layout from "@/components/Layout";
+import AnimatedSection from "@/components/AnimatedSection";
+
+const services = [
+  {
+    title: "Provincial Offences",
+    items: ["Speeding Infractions", "Parking Infractions", "Reckless Driving", "DUI Infractions"],
+  },
+  {
+    title: "Criminal Law (Summary Offences)",
+    items: ["Dangerous Driving", "Theft Under $5,000", "Peace Bonds"],
+  },
+  {
+    title: "Landlord & Tenant",
+    items: ["Evictions", "Unpaid Rent", "Tenant Rights", "Landlord Rights"],
+  },
+  {
+    title: "Small Claims",
+    items: ["Claims up to $35,000", "Breach of Contract", "Unpaid Rent"],
+  },
+  {
+    title: "Employment Law",
+    items: ["Wrongful Dismissal", "Constructive Dismissal", "Employment Contracts", "Severance Review"],
+  },
+  {
+    title: "Human Rights",
+    items: ["Violations", "Compensation Claims"],
+  },
+];
+
+const notaryPricing = [
+  { docs: "1st document", price: "$17 + HST" },
+  { docs: "2nd document", price: "$14 + HST" },
+  { docs: "3rd document", price: "$12 + HST" },
+  { docs: "4th document", price: "$10 + HST" },
+  { docs: "5th document", price: "$8 + HST" },
+  { docs: "Each additional", price: "$5 + HST" },
+];
+
+const Services = () => {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="bg-primary py-20">
+        <div className="container mx-auto px-4">
+          <AnimatedSection className="text-center max-w-3xl mx-auto">
+            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">What We Do</p>
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+              Our Services
+            </h1>
+            <p className="text-primary-foreground/70 text-lg">
+              Comprehensive paralegal services for individuals across the GTA.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Services Accordion */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <AnimatedSection>
+            <Accordion type="multiple" className="space-y-4">
+              {services.map((s) => (
+                <AccordionItem
+                  key={s.title}
+                  value={s.title}
+                  className="bg-card rounded-2xl border shadow-sm px-6 overflow-hidden"
+                >
+                  <AccordionTrigger className="font-serif text-lg font-semibold text-foreground hover:no-underline py-5">
+                    {s.title}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2 mb-4">
+                      {s.items.map((item) => (
+                        <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="rounded-full border-gold text-gold hover:bg-gold/10"
+                    >
+                      <Link to="/contact">Book Consultation</Link>
+                    </Button>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Notary Public */}
+      <section className="py-20 md:py-28 bg-secondary">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <AnimatedSection>
+            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Notary Public</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+              Document Notarization
+            </h2>
+            <div className="bg-card rounded-2xl shadow-sm overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b bg-muted/50">
+                    <th className="text-left px-6 py-4 font-semibold text-foreground">Document</th>
+                    <th className="text-right px-6 py-4 font-semibold text-foreground">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {notaryPricing.map((row, i) => (
+                    <tr key={i} className="border-b last:border-0">
+                      <td className="px-6 py-4 text-muted-foreground">{row.docs}</td>
+                      <td className="px-6 py-4 text-right font-semibold text-foreground">{row.price}</td>
+                    </tr>
+                  ))}
+                  <tr className="bg-muted/30">
+                    <td className="px-6 py-4 text-muted-foreground">Travel fee</td>
+                    <td className="px-6 py-4 text-right font-semibold text-foreground">$25 – $50 + HST</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-6 text-center">
+              <Button
+                asChild
+                className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-8"
+              >
+                <Link to="/contact">Book Notary Appointment</Link>
+              </Button>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Contracts */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <AnimatedSection>
+            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Contracts</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Review & Interpretation
+            </h2>
+            <div className="bg-card rounded-2xl p-8 shadow-sm">
+              <ul className="space-y-3 text-muted-foreground mb-6">
+                <li className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                  Contract Review & Interpretation
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                  PIPEDA Compliance
+                </li>
+              </ul>
+              <p className="text-foreground font-semibold mb-6">
+                Pricing: $50 – $1,000 + HST
+              </p>
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full border-gold text-gold hover:bg-gold/10"
+              >
+                <Link to="/contact">Book Consultation</Link>
+              </Button>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Services;
