@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Calendar, Scale, Shield, Home as HomeIcon, Briefcase, Heart, Award, MessageCircle, DollarSign, UserCheck } from "lucide-react";
+import { Phone, Calendar, Scale, Shield, Home as HomeIcon, Briefcase, Heart, Award, MessageCircle, DollarSign, UserCheck, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -9,7 +9,8 @@ const practiceAreas = [
   { icon: HomeIcon, title: "Real Estate & Landlord-Tenant", desc: "Residential & commercial leases, evictions, tenant rights & property disputes" },
   { icon: Briefcase, title: "Employment Law", desc: "Wrongful dismissal, severance packages, employment contracts & workplace disputes" },
   { icon: Heart, title: "Family Law", desc: "Divorce, separation agreements, child custody, support & property division" },
-  { icon: Shield, title: "Criminal Law", desc: "Summary offences, provincial offences, DUI, theft & peace bonds" },
+  { icon: Shield, title: "Criminal Law", desc: "Summary offences, DUI, theft, assault & peace bonds" },
+  { icon: FileText, title: "Provincial Offences", desc: "Traffic violations, speeding tickets, parking infractions & municipal bylaw offences" },
   { icon: Scale, title: "Civil Litigation", desc: "Small claims court, contract disputes, debt collection & personal injury" },
 ];
 
@@ -111,7 +112,7 @@ const Index = () => {
             <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">What We Do</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Practice Areas</h2>
           </AnimatedSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {practiceAreas.map((area, i) => (
               <AnimatedSection key={area.title} delay={i * 0.05}>
                 <Link

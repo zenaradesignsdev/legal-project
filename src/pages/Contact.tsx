@@ -201,6 +201,7 @@ const Contact = () => {
                           <SelectItem value="employment-law">Employment Law</SelectItem>
                           <SelectItem value="family-law">Family Law</SelectItem>
                           <SelectItem value="criminal-law">Criminal Law</SelectItem>
+                          <SelectItem value="provincial-offences">Provincial Offences</SelectItem>
                           <SelectItem value="civil-litigation">Civil Litigation</SelectItem>
                           <SelectItem value="notary">Notary Public</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
