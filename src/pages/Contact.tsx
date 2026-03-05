@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Phone, Mail, Clock, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,15 +6,51 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Label } from "@/components/ui/label";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().optional().refine(
+    (val) => !val || /^[\d\s\-\(\)]+$/.test(val),
+    "Please enter a valid phone number"
+  ),
+  matter: z.string().min(1, "Please select a legal matter"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", phone: "", matter: "", message: "" });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    setValue,
+    watch,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({ title: "Message sent", description: "We'll get back to you within 1 business day." });
-    setForm({ name: "", email: "", phone: "", matter: "", message: "" });
+  const matterValue = watch("matter");
+
+  const onSubmit = async (data: ContactFormData) => {
+    // Simulate form submission delay
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    
+    // Show success message
+    toast({
+      title: "Message sent successfully!",
+      description: "We'll get back to you within 1 business day.",
+    });
+    
+    // Clear the form
+    reset();
   };
 
   return (
@@ -72,13 +107,16 @@ const Contact = () => {
                       <p className="text-sm text-muted-foreground">Sun: Closed</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
                       <MapPin className="h-5 w-5 text-gold" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Service Area</p>
-                      <p className="font-medium text-foreground">Greater Toronto Area</p>
+                      <p className="font-medium text-foreground mb-1">Greater Toronto Area</p>
+                      <p className="text-sm text-muted-foreground">
+                        Toronto • Mississauga • Brampton • Markham • Vaughan • Pickering
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -97,44 +135,62 @@ const Contact = () => {
                 <p className="text-muted-foreground text-sm mb-8">
                   Fill out the form below and we'll respond within 1 business day.
                 </p>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-1.5 block">Full Name *</label>
+                      <Label htmlFor="name" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Full Name *
+                      </Label>
                       <Input
-                        required
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        id="name"
+                        {...register("name")}
                         placeholder="Your full name"
-                        className="rounded-xl"
+                        className={`rounded-xl ${errors.name ? "border-destructive" : ""}`}
                       />
+                      {errors.name && (
+                        <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-1.5 block">Email *</label>
+                      <Label htmlFor="email" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Email *
+                      </Label>
                       <Input
-                        required
+                        id="email"
                         type="email"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        {...register("email")}
                         placeholder="your@email.com"
-                        className="rounded-xl"
+                        className={`rounded-xl ${errors.email ? "border-destructive" : ""}`}
                       />
+                      {errors.email && (
+                        <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                      )}
                     </div>
                   </div>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-1.5 block">Phone</label>
+                      <Label htmlFor="phone" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Phone
+                      </Label>
                       <Input
-                        value={form.phone}
-                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                        id="phone"
+                        {...register("phone")}
                         placeholder="(647) 000-0000"
-                        className="rounded-xl"
+                        className={`rounded-xl ${errors.phone ? "border-destructive" : ""}`}
                       />
+                      {errors.phone && (
+                        <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
+                      )}
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-1.5 block">Legal Matter *</label>
-                      <Select value={form.matter} onValueChange={(v) => setForm({ ...form, matter: v })}>
-                        <SelectTrigger className="rounded-xl">
+                      <Label htmlFor="matter" className="text-sm font-medium text-foreground mb-1.5 block">
+                        Legal Matter *
+                      </Label>
+                      <Select value={matterValue} onValueChange={(v) => setValue("matter", v)}>
+                        <SelectTrigger 
+                          id="matter"
+                          className={`rounded-xl ${errors.matter ? "border-destructive" : ""}`}
+                        >
                           <SelectValue placeholder="Select a matter" />
                         </SelectTrigger>
                         <SelectContent>
@@ -149,25 +205,33 @@ const Contact = () => {
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
+                      {errors.matter && (
+                        <p className="text-sm text-destructive mt-1">{errors.matter.message}</p>
+                      )}
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">Message *</label>
+                    <Label htmlFor="message" className="text-sm font-medium text-foreground mb-1.5 block">
+                      Message *
+                    </Label>
                     <Textarea
-                      required
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      id="message"
+                      {...register("message")}
                       placeholder="Tell us about your situation..."
-                      className="rounded-xl min-h-[120px]"
+                      className={`rounded-xl min-h-[120px] ${errors.message ? "border-destructive" : ""}`}
                     />
+                    {errors.message && (
+                      <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                    )}
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gold text-accent-foreground hover:bg-gold-light rounded-full font-semibold"
+                    disabled={isSubmitting}
+                    className="w-full bg-gold text-accent-foreground hover:bg-gold-light rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Calendar className="h-5 w-5 mr-2" />
-                    Send Message & Book Consultation
+                    {isSubmitting ? "Sending..." : "Send Message & Book Consultation"}
                   </Button>
                 </form>
               </div>
