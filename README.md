@@ -52,15 +52,30 @@ This project is built with:
 
 ## How can I deploy this project?
 
-You can deploy this project using any static hosting service that supports Vite/React applications, such as Vercel, Netlify, or GitHub Pages.
+### Vercel (Recommended)
+
+This project is optimized for Vercel deployment:
+
+1. Connect your repository to Vercel
+2. Vercel will automatically detect the Vite framework
+3. The `vercel.json` configuration handles:
+   - SPA routing (all routes serve `index.html`)
+   - Build optimizations
+   - Security headers
+   - Asset caching (1 year for static assets)
+
+**Deploy command:**
+```sh
+vercel
+```
+
+### Other Platforms
+
+You can also deploy to:
+- **Netlify**: Uses `public/_redirects` for SPA routing
+- **Apache**: Uses `.htaccess` for routing
+- **Nginx**: See `nginx.conf.example` for configuration
 
 ### Routing Configuration
 
-This project uses client-side routing (React Router). To ensure direct navigation to routes (e.g., `/services`, `/about`) works correctly, the following configuration files are included:
-
-- **Netlify**: `public/_redirects` - Automatically handles SPA routing
-- **Vercel**: `vercel.json` - Configured for SPA routing
-- **Apache**: `.htaccess` - Included for Apache servers
-- **Nginx**: `nginx.conf.example` - Example configuration provided
-
-These files ensure that all routes serve `index.html`, allowing React Router to handle the routing client-side.
+This project uses client-side routing (React Router). The configuration files ensure that direct navigation to routes (e.g., `/services`, `/about`) works correctly by serving `index.html` for all routes, allowing React Router to handle routing client-side.
