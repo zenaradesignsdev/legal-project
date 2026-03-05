@@ -54,16 +54,26 @@ const About = () => {
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
               <p>
-                Pickering Law Firm was established with a simple but powerful mission: make legal services 
-                accessible, straightforward, and effective for everyday people across the Greater Toronto Area.
+                Pickering Law Firm was founded in 2012 by Sarah Mitchell, a seasoned lawyer with a vision to bridge 
+                the gap between complex legal systems and the individuals who need representation most. Recognizing that 
+                many GTA residents faced barriers accessing quality legal services, Sarah established the firm with a 
+                commitment to providing professional, accessible, and client-centered representation.
               </p>
               <p>
-                Our firm handles matters across Provincial Offences, Criminal Law, Landlord & Tenant disputes, 
-                Small Claims, Employment Law, Human Rights, Notary services, and Contracts.
+                In 2015, David Chen joined the practice as a partner, bringing complementary expertise and expanding the 
+                firm's capacity to serve clients across a broader range of legal matters. Together, Sarah and David have 
+                built a practice that combines deep legal knowledge with genuine care for each client's unique circumstances.
               </p>
               <p>
-                We continue to grow while staying true to our core principles — clear communication, fair 
-                pricing, and unwavering commitment to each client's case.
+                Today, Pickering Law Firm handles matters across Provincial Offences, Criminal Law, Landlord & Tenant 
+                disputes, Small Claims, Employment Law, Human Rights, Notary services, and Contracts. Our two-partner 
+                structure allows us to maintain the personal attention and responsiveness that larger firms often cannot, 
+                while providing comprehensive legal services backed by decades of combined experience.
+              </p>
+              <p>
+                We remain committed to our founding principles: clear communication, fair and transparent pricing, and 
+                unwavering dedication to achieving the best possible outcomes for our clients. Every case receives the 
+                careful attention and strategic approach it deserves, regardless of its size or complexity.
               </p>
             </div>
           </AnimatedSection>

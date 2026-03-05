@@ -41,10 +41,10 @@ const Index = () => {
               Pickering Law Firm
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              Trusted Legal Representation in the GTA Since 2016
+              Trusted Legal Representation in the GTA since 2012
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10 max-w-2xl">
-              Professional Paralegal & Notary Services — Clear Advice. Strong Representation. Real Results.
+              Professional Legal & Notary Services — Clear Advice. Strong Representation. Real Results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -88,12 +88,13 @@ const Index = () => {
             <AnimatedSection delay={0.2}>
               <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">About Our Firm</p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Experienced Legal Professionals
+                Two Partners, One Mission
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-                Pickering Law Firm is a dedicated team of licensed paralegals and notary publics serving the GTA. 
-                With years of combined experience, we provide accessible, professional legal representation for 
-                individuals who need clear guidance and strong advocacy.
+                Pickering Law Firm is a boutique practice led by partners Sarah Mitchell and David Chen. Founded in 2012, 
+                our two-partner structure ensures that every client receives personalized attention and direct access to 
+                experienced legal professionals. With over 25 years of combined experience, we provide accessible, 
+                professional legal representation across the GTA.
               </p>
               <Button asChild className="bg-primary text-primary-foreground hover:bg-navy-light rounded-full px-8">
                 <Link to="/team">Meet Our Team</Link>

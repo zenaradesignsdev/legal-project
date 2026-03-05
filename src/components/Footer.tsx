@@ -12,7 +12,7 @@ const Footer = () => {
               Pickering <span className="text-gold">Law Firm</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Professional Paralegal & Notary Services serving the Greater Toronto Area.
+              Professional Legal & Notary Services serving the Greater Toronto Area.
             </p>
           </div>
 
@@ -77,9 +77,9 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
           <p className="text-xs text-primary-foreground/50 text-center leading-relaxed max-w-3xl mx-auto">
-            Pickering Law Firm provides paralegal services as permitted under the Law Society of Ontario. 
-            A paralegal is not a lawyer. The information on this website is for general informational purposes only 
-            and does not constitute legal advice. No solicitor-client relationship is created by using this website. 
+            Pickering Law Firm provides legal services as licensed lawyers under the Law Society of Ontario. 
+            The information on this website is for general informational purposes only and does not constitute legal advice. 
+            No solicitor-client relationship is created by using this website. 
             © {new Date().getFullYear()} Pickering Law Firm. All rights reserved.
           </p>
         </div>

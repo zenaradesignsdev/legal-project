@@ -52,7 +52,7 @@ const Services = () => {
               Our Services
             </h1>
             <p className="text-primary-foreground/70 text-lg">
-              Comprehensive paralegal services for individuals across the GTA.
+              Comprehensive legal services for individuals across the GTA.
             </p>
           </AnimatedSection>
         </div>
