@@ -1,24 +1,28 @@
 import { Link } from "react-router-dom";
-import { Phone, Calendar, Scale, Shield, Home as HomeIcon, Briefcase, Heart, Award, MessageCircle, DollarSign, UserCheck, FileText } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBackground from "@/assets/hero-background.png";
+import sarahMitchellPhoto from "@/assets/sarah-mitchell.png";
+import davidChenPhoto from "@/assets/david-chen.png";
+import gavelLawImage from "@/assets/gavel-law.png";
+import lawyerDocumentImage from "@/assets/lawyer-document.png";
 
 const practiceAreas = [
-  { icon: HomeIcon, title: "Real Estate & Landlord-Tenant", desc: "Residential & commercial leases, evictions, tenant rights & property disputes" },
-  { icon: Briefcase, title: "Employment Law", desc: "Wrongful dismissal, severance packages, employment contracts & workplace disputes" },
-  { icon: Heart, title: "Family Law", desc: "Divorce, separation agreements, child custody, support & property division" },
-  { icon: Shield, title: "Criminal Law", desc: "Summary offences, DUI, theft, assault & peace bonds" },
-  { icon: FileText, title: "Provincial Offences", desc: "Traffic violations, speeding tickets, parking infractions & municipal bylaw offences" },
-  { icon: Scale, title: "Civil Litigation", desc: "Small claims court, contract disputes, debt collection & personal injury" },
+  { title: "Real Estate & Landlord-Tenant", desc: "Residential & commercial leases, evictions, tenant rights & property disputes" },
+  { title: "Employment Law", desc: "Wrongful dismissal, severance packages, employment contracts & workplace disputes" },
+  { title: "Family Law", desc: "Divorce, separation agreements, child custody, support & property division" },
+  { title: "Criminal Law", desc: "Summary offences, DUI, theft, assault & peace bonds" },
+  { title: "Provincial Offences", desc: "Traffic violations, speeding tickets, parking infractions & municipal bylaw offences" },
+  { title: "Civil Litigation", desc: "Small claims court, contract disputes, debt collection & personal injury" },
 ];
 
 const values = [
-  { icon: Award, title: "Established & Experienced", desc: "Serving the GTA with dedication and expertise" },
-  { icon: MessageCircle, title: "Clear Communication", desc: "Straightforward advice with full transparency" },
-  { icon: DollarSign, title: "Accessible Pricing", desc: "Fair and competitive rates for quality representation" },
-  { icon: UserCheck, title: "Client-Focused", desc: "Your case, your goals — always the priority" },
+  { title: "Established & Experienced", desc: "Serving the GTA with dedication and expertise" },
+  { title: "Clear Communication", desc: "Straightforward advice with full transparency" },
+  { title: "Accessible Pricing", desc: "Fair and competitive rates for quality representation" },
+  { title: "Client-Focused", desc: "Your case, your goals — always the priority" },
 ];
 
 const Index = () => {
@@ -62,7 +66,7 @@ const Index = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8 text-base relative z-10"
+                className="border-primary-foreground/30 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-full px-8 text-base relative z-10"
               >
                 <a href="tel:9055550100">
                   <Phone className="h-5 w-5 mr-2" />
@@ -79,11 +83,26 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection>
-              <div className="relative">
-                <div className="rounded-2xl shadow-xl w-full max-w-md mx-auto lg:mx-0 bg-muted aspect-[4/5] flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">Team Photo Coming Soon</p>
+              <div className="relative max-w-xs mx-auto lg:mx-0 pb-8 pr-8">
+                {/* Sarah Mitchell - Back Photo */}
+                <div className="relative z-10">
+                  <img
+                    src={sarahMitchellPhoto}
+                    alt="Sarah Mitchell — Principal & Founding Partner"
+                    className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
+                    style={{ objectPosition: '60% center' }}
+                  />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 rounded-2xl -z-10" />
+                {/* David Chen - Front Photo (Overlapping) */}
+                <div className="absolute -bottom-16 -right-4 z-20 w-[60%]">
+                  <img
+                    src={davidChenPhoto}
+                    alt="David Chen — Partner"
+                    className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
+                  />
+                </div>
+                {/* Decorative Element */}
+                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-gold/20 rounded-2xl -z-10" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
@@ -106,8 +125,18 @@ const Index = () => {
       </section>
 
       {/* Practice Areas */}
-      <section className="py-20 md:py-28 bg-secondary">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 bg-secondary overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url(${gavelLawImage})`,
+            opacity: 0.35
+          }}
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/80 via-secondary/90 to-secondary" />
+        <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection className="text-center mb-16">
             <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">What We Do</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Practice Areas</h2>
@@ -117,12 +146,14 @@ const Index = () => {
               <AnimatedSection key={area.title} delay={i * 0.05}>
                 <Link
                   to="/services"
-                  className="group block bg-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full"
+                  className="group block bg-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full border border-border/50"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-4 group-hover:bg-gold/20 transition-colors">
-                    <area.icon className="h-6 w-6 text-gold" />
+                  <div className="mb-3">
+                    <span className="inline-block text-xs font-semibold text-gold tracking-wider uppercase mb-2">
+                      Practice Area
+                    </span>
                   </div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{area.title}</h3>
+                  <h3 className="font-serif text-lg font-semibold text-foreground mb-2 leading-tight">{area.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{area.desc}</p>
                 </Link>
               </AnimatedSection>
@@ -133,21 +164,32 @@ const Index = () => {
 
       {/* Why Choose Us */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Our Difference</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Why Choose Us</h2>
-          </AnimatedSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((val, i) => (
-              <AnimatedSection key={val.title} delay={i * 0.1} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
-                  <val.icon className="h-7 w-7 text-gold" />
-                </div>
-                <h3 className="font-serif text-lg font-semibold text-foreground mb-2">{val.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{val.desc}</p>
-              </AnimatedSection>
-            ))}
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <AnimatedSection>
+              <div className="relative">
+                <img
+                  src={lawyerDocumentImage}
+                  alt="Professional legal representation"
+                  className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
+                />
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 rounded-2xl -z-10 hidden lg:block" />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Our Difference</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
+                Why Choose Us
+              </h2>
+              <div className="space-y-6">
+                {values.map((val, i) => (
+                  <div key={val.title} className="border-l-2 border-gold/30 pl-6">
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-2 leading-tight">{val.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{val.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
