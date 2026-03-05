@@ -3,6 +3,7 @@ import { Phone, Calendar, Scale, Shield, Users, FileText, Gavel, Home as HomeIco
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import heroBackground from "@/assets/hero-background.png";
 
 const practiceAreas = [
   { icon: Gavel, title: "Provincial Offences", desc: "Speeding, parking, reckless driving & DUI infractions" },
@@ -26,9 +27,14 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative bg-primary min-h-[85vh] flex items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-navy to-navy-light opacity-95" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE4YzEuNjU3IDAgMy0xLjM0MyAzLTNzLTEuMzQzLTMtMy0zLTMgMS4zNDMtMyAzIDEuMzQzIDMgMyAzek0xOCAzNmMxLjY1NyAwIDMtMS4zNDMgMy0zcy0xLjM0My0zLTMtMy0zIDEuMzQzLTMgMyAxLjM0MyAzIDMgM3oiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50" />
+      <section className="relative bg-primary h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] flex items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/70 via-navy/60 to-navy-light/70" />
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection className="max-w-3xl">
             <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-4">
