@@ -63,8 +63,11 @@ const Contact = () => {
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Contact Us
             </h1>
-            <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
+            <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto mb-2">
               Ready to discuss your legal matter? Reach out for a free 30-minute consultation.
+            </p>
+            <p className="text-primary-foreground/60 text-sm max-w-2xl mx-auto">
+              Extended consultations available: $200 – $300 + HST
             </p>
           </AnimatedSection>
         </div>

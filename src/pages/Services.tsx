@@ -102,8 +102,11 @@ const Services = () => {
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Our Services
             </h1>
-            <p className="text-primary-foreground/70 text-lg">
+            <p className="text-primary-foreground/70 text-lg mb-2">
               Comprehensive legal services for individuals across the GTA.
+            </p>
+            <p className="text-primary-foreground/60 text-sm">
+              Free 30-minute consultation • Extended consultations: $200 – $300 + HST
             </p>
           </AnimatedSection>
         </div>

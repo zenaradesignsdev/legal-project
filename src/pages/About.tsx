@@ -110,13 +110,18 @@ const About = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
               Ready to Discuss Your Case?
             </h2>
-            <Button
-              asChild
-              size="lg"
-              className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-10 text-base font-semibold"
-            >
-              <Link to="/contact">Book Free Consultation</Link>
-            </Button>
+            <div className="space-y-4">
+              <p className="text-primary-foreground/70 text-sm">
+                Free 30-minute consultation • Extended consultations: $200 – $300 + HST
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-10 text-base font-semibold"
+              >
+                <Link to="/contact">Book Free Consultation</Link>
+              </Button>
+            </div>
           </AnimatedSection>
         </div>
       </section>

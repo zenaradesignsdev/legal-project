@@ -33,21 +33,24 @@ const Index = () => {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/70 via-navy/60 to-navy-light/70" />
         <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection className="max-w-3xl">
+          <AnimatedSection className="max-w-3xl relative z-10">
             <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-4">
               Pickering Law Firm
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               Trusted Legal Representation in the GTA since 2012
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-lg md:text-xl text-primary-foreground/75 leading-relaxed mb-4 max-w-2xl">
               Professional Legal & Notary Services — Clear Advice. Strong Representation. Real Results.
+            </p>
+            <p className="text-primary-foreground/60 text-sm mb-10 max-w-2xl">
+              Free 30-minute consultation • Extended consultations: $200 – $300 + HST
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
                 size="lg"
-                className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-8 text-base font-semibold shadow-lg"
+                className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-8 text-base font-semibold shadow-lg relative z-10"
               >
                 <Link to="/contact">
                   <Calendar className="h-5 w-5 mr-2" />
@@ -58,7 +61,7 @@ const Index = () => {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8 text-base"
+                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8 text-base relative z-10"
               >
                 <a href="tel:9055550100">
                   <Phone className="h-5 w-5 mr-2" />
@@ -161,7 +164,7 @@ const Index = () => {
               Discuss your legal matter with no obligation.
             </p>
             <p className="text-primary-foreground/60 text-sm mb-10">
-              Extended consultations available: $50 – $100 + HST
+              Extended consultations available: $200 – $300 + HST
             </p>
             <Button
               asChild
