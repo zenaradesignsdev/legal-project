@@ -16,7 +16,7 @@ const practiceAreas = [
 ];
 
 const values = [
-  { icon: Award, title: "Established & Experienced", desc: "Serving the GTA with dedication since 2016" },
+  { icon: Award, title: "Established & Experienced", desc: "Serving the GTA with dedication and expertise" },
   { icon: MessageCircle, title: "Clear Communication", desc: "Straightforward advice with full transparency" },
   { icon: DollarSign, title: "Accessible Pricing", desc: "Fair and competitive rates for quality representation" },
   { icon: UserCheck, title: "Client-Focused", desc: "Your case, your goals — always the priority" },
@@ -32,7 +32,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <AnimatedSection className="max-w-3xl">
             <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-4">
-              William's Legal Services
+              Pickering Law Firm
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               Trusted Legal Representation in the GTA Since 2016
@@ -57,9 +57,9 @@ const Index = () => {
                 variant="outline"
                 className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 rounded-full px-8 text-base"
               >
-                <a href="tel:6476315516">
+                <a href="tel:9055550100">
                   <Phone className="h-5 w-5 mr-2" />
-                  Call Now: (647) 631-5516
+                  Call Now: (905) 555-0100
                 </a>
               </Button>
             </div>
@@ -73,23 +73,20 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection>
               <div className="relative">
-                <img
-                  src="/images/damian-williams.jpeg"
-                  alt="Damian Williams — Paralegal & Notary Public"
-                  className="rounded-2xl shadow-xl w-full max-w-md mx-auto lg:mx-0 object-cover aspect-[4/5]"
-                />
+                <div className="rounded-2xl shadow-xl w-full max-w-md mx-auto lg:mx-0 bg-muted aspect-[4/5] flex items-center justify-center">
+                  <p className="text-muted-foreground text-sm">Team Photo Coming Soon</p>
+                </div>
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gold/20 rounded-2xl -z-10" />
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">About the Founder</p>
+              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">About Our Firm</p>
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Damian Williams
+                Experienced Legal Professionals
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-                Damian Williams is a licensed Paralegal and Notary Public serving the GTA since 2016. 
-                With a background in Paralegal Studies and years of community mentorship, he built 
-                William's Legal Services to provide accessible, professional legal representation for 
+                Pickering Law Firm is a dedicated team of licensed paralegals and notary publics serving the GTA. 
+                With years of combined experience, we provide accessible, professional legal representation for 
                 individuals who need clear guidance and strong advocacy.
               </p>
               <Button asChild className="bg-primary text-primary-foreground hover:bg-navy-light rounded-full px-8">

@@ -21,7 +21,7 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <span className="font-serif text-xl md:text-2xl font-bold text-primary-foreground tracking-tight">
-            William's <span className="text-gold">Legal</span>
+            Pickering <span className="text-gold">Law Firm</span>
           </span>
         </Link>
 
@@ -45,11 +45,11 @@ const Header = () => {
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:6476315516"
+            href="tel:9055550100"
             className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-gold transition-colors"
           >
             <Phone className="h-4 w-4" />
-            (647) 631-5516
+            (905) 555-0100
           </a>
           <Button
             asChild
@@ -88,11 +88,11 @@ const Header = () => {
               </Link>
             ))}
             <a
-              href="tel:6476315516"
+              href="tel:9055550100"
               className="flex items-center gap-2 py-3 px-3 text-sm text-primary-foreground/80 hover:text-gold"
             >
               <Phone className="h-4 w-4" />
-              (647) 631-5516
+              (905) 555-0100
             </a>
           </nav>
         </div>

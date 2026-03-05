@@ -43,22 +43,22 @@ const Contact = () => {
               <div>
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
                 <div className="space-y-5">
-                  <a href="tel:6476315516" className="flex items-center gap-4 group">
+                  <a href="tel:9055550100" className="flex items-center gap-4 group">
                     <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                       <Phone className="h-5 w-5 text-gold" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="font-medium text-foreground">(647) 631-5516</p>
+                      <p className="font-medium text-foreground">(905) 555-0100</p>
                     </div>
                   </a>
-                  <a href="mailto:damianwilliams@williamslegalservices.ca" className="flex items-center gap-4 group">
+                  <a href="mailto:info@pickeringlawfirm.com" className="flex items-center gap-4 group">
                     <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                       <Mail className="h-5 w-5 text-gold" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-medium text-foreground text-sm">damianwilliams@williamslegalservices.ca</p>
+                      <p className="font-medium text-foreground text-sm">info@pickeringlawfirm.com</p>
                     </div>
                   </a>
                   <div className="flex items-start gap-4">

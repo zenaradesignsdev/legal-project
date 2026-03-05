@@ -23,7 +23,7 @@ const About = () => {
               Our Story
             </h1>
             <p className="text-primary-foreground/70 text-lg leading-relaxed">
-              Providing accessible, professional legal services to individuals across the GTA since 2016.
+              Providing accessible, professional legal services to individuals across the GTA.
             </p>
           </AnimatedSection>
         </div>
@@ -54,18 +54,16 @@ const About = () => {
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
               <p>
-                William's Legal Services was founded in 2016 by Damian Williams with a simple but 
-                powerful mission: make legal services accessible, straightforward, and effective for 
-                everyday people across the Greater Toronto Area.
+                Pickering Law Firm was established with a simple but powerful mission: make legal services 
+                accessible, straightforward, and effective for everyday people across the Greater Toronto Area.
               </p>
               <p>
-                What started as a solo practice has grown into a dedicated firm handling matters across 
-                Provincial Offences, Criminal Law, Landlord & Tenant disputes, Small Claims, Employment 
-                Law, Human Rights, Notary services, and Contracts.
+                Our firm handles matters across Provincial Offences, Criminal Law, Landlord & Tenant disputes, 
+                Small Claims, Employment Law, Human Rights, Notary services, and Contracts.
               </p>
               <p>
-                Today, the firm continues to grow while staying true to its founding principles — clear 
-                communication, fair pricing, and unwavering commitment to each client's case.
+                We continue to grow while staying true to our core principles — clear communication, fair 
+                pricing, and unwavering commitment to each client's case.
               </p>
             </div>
           </AnimatedSection>

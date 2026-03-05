@@ -9,10 +9,10 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-bold mb-4">
-              William's <span className="text-gold">Legal</span>
+              Pickering <span className="text-gold">Law Firm</span>
             </h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Professional Paralegal & Notary Services serving the Greater Toronto Area since 2016.
+              Professional Paralegal & Notary Services serving the Greater Toronto Area.
             </p>
           </div>
 
@@ -42,16 +42,16 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg font-semibold mb-4 text-gold">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="tel:6476315516" className="flex items-center gap-2 hover:text-gold transition-colors">
+              <a href="tel:9055550100" className="flex items-center gap-2 hover:text-gold transition-colors">
                 <Phone className="h-4 w-4 text-gold" />
-                (647) 631-5516
+                (905) 555-0100
               </a>
               <a
-                href="mailto:damianwilliams@williamslegalservices.ca"
+                href="mailto:info@pickeringlawfirm.com"
                 className="flex items-center gap-2 hover:text-gold transition-colors"
               >
                 <Mail className="h-4 w-4 text-gold" />
-                damianwilliams@williamslegalservices.ca
+                info@pickeringlawfirm.com
               </a>
             </div>
           </div>
@@ -77,10 +77,10 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
           <p className="text-xs text-primary-foreground/50 text-center leading-relaxed max-w-3xl mx-auto">
-            William's Legal Services provides paralegal services as permitted under the Law Society of Ontario. 
+            Pickering Law Firm provides paralegal services as permitted under the Law Society of Ontario. 
             A paralegal is not a lawyer. The information on this website is for general informational purposes only 
             and does not constitute legal advice. No solicitor-client relationship is created by using this website. 
-            © {new Date().getFullYear()} William's Legal Services. All rights reserved.
+            © {new Date().getFullYear()} Pickering Law Firm. All rights reserved.
           </p>
         </div>
       </div>

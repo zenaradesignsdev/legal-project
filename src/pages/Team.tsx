@@ -14,31 +14,28 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Damian */}
+      {/* Team Members */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
             <AnimatedSection>
-              <img
-                src="/images/damian-williams.jpeg"
-                alt="Damian Williams — Paralegal & Notary Public"
-                className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
-              />
+              <div className="rounded-2xl shadow-xl w-full bg-muted aspect-[4/5] flex items-center justify-center">
+                <p className="text-muted-foreground text-sm">Team Photo Coming Soon</p>
+              </div>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
-              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Principal</p>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-1">Damian Williams</h2>
-              <p className="text-muted-foreground font-medium mb-6">Paralegal & Notary Public</p>
+              <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-2">Our Team</p>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-1">Experienced Legal Professionals</h2>
+              <p className="text-muted-foreground font-medium mb-6">Paralegals & Notary Publics</p>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Damian began his legal career as a solo practitioner in 2015 and founded William's Legal 
-                  Services shortly after. Since then, he has assembled a dedicated team of paralegals committed 
-                  to delivering professional, accessible legal services across the GTA.
+                  Our team consists of licensed paralegals committed to delivering professional, accessible 
+                  legal services across the GTA. We bring years of combined experience in various areas of law.
                 </p>
                 <p>
-                  Damian holds a diploma in Paralegal Studies and practices primarily in Provincial Offences 
-                  and Summary Criminal Law. Outside of law, he mentors youth and enjoys automotive performance 
-                  and restoration.
+                  Our paralegals practice primarily in Provincial Offences, Summary Criminal Law, Landlord & Tenant, 
+                  Small Claims, Employment Law, Human Rights, and provide Notary Public services. We are dedicated 
+                  to providing clear guidance and strong representation for our clients.
                 </p>
               </div>
             </AnimatedSection>
