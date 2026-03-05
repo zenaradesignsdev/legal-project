@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
-import { Phone, Calendar, Scale, Shield, Users, FileText, Gavel, Home as HomeIcon, Briefcase, Heart, PenTool, Award, MessageCircle, DollarSign, UserCheck } from "lucide-react";
+import { Phone, Calendar, Scale, Shield, Home as HomeIcon, Briefcase, Heart, Award, MessageCircle, DollarSign, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
 import heroBackground from "@/assets/hero-background.png";
 
 const practiceAreas = [
-  { icon: Gavel, title: "Provincial Offences", desc: "Speeding, parking, reckless driving & DUI infractions" },
-  { icon: Shield, title: "Criminal Law", desc: "Summary offences including dangerous driving & theft" },
-  { icon: HomeIcon, title: "Landlord & Tenant", desc: "Evictions, unpaid rent & tenant/landlord rights" },
-  { icon: Scale, title: "Small Claims", desc: "Claims up to $35,000 & breach of contract" },
-  { icon: Briefcase, title: "Employment Law", desc: "Wrongful dismissal, severance & contracts" },
-  { icon: Heart, title: "Human Rights", desc: "Violations & compensation claims" },
-  { icon: PenTool, title: "Notary Public", desc: "Certified document notarization services" },
-  { icon: FileText, title: "Contracts", desc: "Review, interpretation & PIPEDA compliance" },
+  { icon: HomeIcon, title: "Real Estate & Landlord-Tenant", desc: "Residential & commercial leases, evictions, tenant rights & property disputes" },
+  { icon: Briefcase, title: "Employment Law", desc: "Wrongful dismissal, severance packages, employment contracts & workplace disputes" },
+  { icon: Heart, title: "Family Law", desc: "Divorce, separation agreements, child custody, support & property division" },
+  { icon: Shield, title: "Criminal Law", desc: "Summary offences, provincial offences, DUI, theft & peace bonds" },
+  { icon: Scale, title: "Civil Litigation", desc: "Small claims court, contract disputes, debt collection & personal injury" },
 ];
 
 const values = [

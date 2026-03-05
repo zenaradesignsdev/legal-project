@@ -6,28 +6,79 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const services = [
   {
-    title: "Provincial Offences",
-    items: ["Speeding Infractions", "Parking Infractions", "Reckless Driving", "DUI Infractions"],
-  },
-  {
-    title: "Criminal Law (Summary Offences)",
-    items: ["Dangerous Driving", "Theft Under $5,000", "Peace Bonds"],
-  },
-  {
-    title: "Landlord & Tenant",
-    items: ["Evictions", "Unpaid Rent", "Tenant Rights", "Landlord Rights"],
-  },
-  {
-    title: "Small Claims",
-    items: ["Claims up to $35,000", "Breach of Contract", "Unpaid Rent"],
+    title: "Real Estate & Landlord-Tenant",
+    items: [
+      "Residential lease agreements & renewals",
+      "Commercial lease negotiations",
+      "Eviction proceedings & notices",
+      "Tenant rights & landlord obligations",
+      "Rent increase disputes",
+      "Property maintenance & repair issues",
+      "Security deposit disputes",
+      "N12 & N13 applications",
+      "Landlord & Tenant Board representation",
+    ],
+    pricing: "Initial consultation: $200 + HST | Representation: $250-$400/hour + HST",
   },
   {
     title: "Employment Law",
-    items: ["Wrongful Dismissal", "Constructive Dismissal", "Employment Contracts", "Severance Review"],
+    items: [
+      "Wrongful dismissal claims",
+      "Severance package review & negotiation",
+      "Employment contract review & drafting",
+      "Constructive dismissal",
+      "Workplace harassment & discrimination",
+      "Employment Standards Act violations",
+      "Termination negotiations",
+      "Non-compete & confidentiality agreements",
+      "Employment Standards Board representation",
+    ],
+    pricing: "Initial consultation: $250 + HST | Representation: $300-$500/hour + HST",
   },
   {
-    title: "Human Rights",
-    items: ["Violations", "Compensation Claims"],
+    title: "Family Law",
+    items: [
+      "Divorce & separation agreements",
+      "Child custody & access arrangements",
+      "Child support & spousal support",
+      "Property division & equalization",
+      "Prenuptial & cohabitation agreements",
+      "Domestic contracts",
+      "Parenting plans & schedules",
+      "Enforcement of support orders",
+      "Family court representation",
+    ],
+    pricing: "Initial consultation: $300 + HST | Representation: $350-$550/hour + HST",
+  },
+  {
+    title: "Criminal Law",
+    items: [
+      "Summary criminal offences",
+      "Provincial offences (speeding, parking, etc.)",
+      "DUI & impaired driving charges",
+      "Theft under $5,000",
+      "Assault & peace bonds",
+      "Dangerous driving",
+      "Mischief & property damage",
+      "Criminal record suspensions",
+      "Court representation & plea negotiations",
+    ],
+    pricing: "Initial consultation: $200 + HST | Representation: $300-$600/hour + HST | Fixed fees available",
+  },
+  {
+    title: "Civil Litigation",
+    items: [
+      "Small Claims Court (up to $35,000)",
+      "Contract disputes & breach of contract",
+      "Debt collection & enforcement",
+      "Personal injury claims",
+      "Property damage claims",
+      "Consumer protection matters",
+      "Dispute resolution & mediation",
+      "Judgment enforcement",
+      "Civil court representation",
+    ],
+    pricing: "Initial consultation: $200 + HST | Representation: $300-$500/hour + HST | Contingency fees available for personal injury",
   },
 ];
 
@@ -73,7 +124,7 @@ const Services = () => {
                     {s.title}
                   </AccordionTrigger>
                   <AccordionContent>
-                    <ul className="space-y-2 mb-4">
+                    <ul className="space-y-2 mb-6">
                       {s.items.map((item) => (
                         <li key={item} className="flex items-center gap-3 text-muted-foreground">
                           <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
@@ -81,6 +132,10 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
+                    <div className="bg-muted/50 rounded-xl p-4 mb-4">
+                      <p className="text-sm font-semibold text-foreground mb-1">Pricing</p>
+                      <p className="text-sm text-muted-foreground">{s.pricing}</p>
+                    </div>
                     <Button
                       asChild
                       variant="outline"
@@ -100,11 +155,11 @@ const Services = () => {
       <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <AnimatedSection>
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Notary Public</p>
+            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Additional Services</p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
-              Document Notarization
+              Notary Public Services
             </h2>
-            <div className="bg-card rounded-2xl shadow-sm overflow-hidden">
+            <div className="bg-card rounded-2xl shadow-sm overflow-hidden mb-6">
               <table className="w-full">
                 <thead>
                   <tr className="border-b bg-muted/50">
@@ -120,52 +175,24 @@ const Services = () => {
                     </tr>
                   ))}
                   <tr className="bg-muted/30">
-                    <td className="px-6 py-4 text-muted-foreground">Travel fee</td>
-                    <td className="px-6 py-4 text-right font-semibold text-foreground">$25 – $50 + HST</td>
+                    <td className="px-6 py-4 text-muted-foreground">Travel fee (if required)</td>
+                    <td className="px-6 py-4 text-right font-semibold text-foreground">$50 – $100 + HST</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="mt-6 text-center">
+            <div className="bg-card rounded-2xl p-6 shadow-sm mb-6">
+              <p className="text-sm text-muted-foreground mb-4">
+                We provide notarization services for affidavits, statutory declarations, certified copies, 
+                and other legal documents. Both partners are certified Notary Publics.
+              </p>
+            </div>
+            <div className="text-center">
               <Button
                 asChild
                 className="bg-gold text-accent-foreground hover:bg-gold-light rounded-full px-8"
               >
                 <Link to="/contact">Book Notary Appointment</Link>
-              </Button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Contracts */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <AnimatedSection>
-            <p className="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Contracts</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Review & Interpretation
-            </h2>
-            <div className="bg-card rounded-2xl p-8 shadow-sm">
-              <ul className="space-y-3 text-muted-foreground mb-6">
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                  Contract Review & Interpretation
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                  PIPEDA Compliance
-                </li>
-              </ul>
-              <p className="text-foreground font-semibold mb-6">
-                Pricing: $50 – $1,000 + HST
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full border-gold text-gold hover:bg-gold/10"
-              >
-                <Link to="/contact">Book Consultation</Link>
               </Button>
             </div>
           </AnimatedSection>

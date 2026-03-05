@@ -194,14 +194,12 @@ const Contact = () => {
                           <SelectValue placeholder="Select a matter" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="provincial-offences">Provincial Offences</SelectItem>
-                          <SelectItem value="criminal-law">Criminal Law</SelectItem>
-                          <SelectItem value="landlord-tenant">Landlord & Tenant</SelectItem>
-                          <SelectItem value="small-claims">Small Claims</SelectItem>
+                          <SelectItem value="real-estate-landlord-tenant">Real Estate & Landlord-Tenant</SelectItem>
                           <SelectItem value="employment-law">Employment Law</SelectItem>
-                          <SelectItem value="human-rights">Human Rights</SelectItem>
+                          <SelectItem value="family-law">Family Law</SelectItem>
+                          <SelectItem value="criminal-law">Criminal Law</SelectItem>
+                          <SelectItem value="civil-litigation">Civil Litigation</SelectItem>
                           <SelectItem value="notary">Notary Public</SelectItem>
-                          <SelectItem value="contracts">Contracts</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
