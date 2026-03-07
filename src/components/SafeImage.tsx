@@ -12,7 +12,7 @@ export const SafeImage = ({ src, alt, className = '', priority = false }: ImageP
   const webpSet = `${src}?w=400;800;1200&format=webp&as=srcset`;
 
   return (
-    <picture className={className}>
+    <picture>
       <source srcSet={avifSet} type="image/avif" sizes="(max-width: 1200px) 100vw, 1200px" />
       <source srcSet={webpSet} type="image/webp" sizes="(max-width: 1200px) 100vw, 1200px" />
       <img
@@ -20,7 +20,7 @@ export const SafeImage = ({ src, alt, className = '', priority = false }: ImageP
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
-        className="w-full h-auto"
+        className={className || 'w-full h-auto'}
       />
     </picture>
   );

@@ -26,7 +26,7 @@ const Team = () => {
                 <SafeImage
                   src={sarahMitchellPhoto}
                   alt="Sarah Mitchell — Principal & Founding Partner"
-                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
                   priority={false}
                 />
                 <style>{`
@@ -98,7 +98,7 @@ const Team = () => {
                 <SafeImage
                   src={davidChenPhoto}
                   alt="David Chen — Partner"
-                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
                   priority={false}
                 />
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10" />

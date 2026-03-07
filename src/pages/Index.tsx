@@ -94,7 +94,7 @@ const Index = () => {
                   <SafeImage
                     src={sarahMitchellPhoto}
                     alt="Sarah Mitchell — Principal & Founding Partner"
-                    className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5]"
+                    className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                     priority={false}
                   />
                   <style>{`
@@ -108,7 +108,7 @@ const Index = () => {
                   <SafeImage
                     src={davidChenPhoto}
                     alt="David Chen — Partner"
-                    className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5]"
+                    className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                     priority={false}
                   />
                 </div>
