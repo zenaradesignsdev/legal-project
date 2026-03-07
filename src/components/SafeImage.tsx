@@ -6,16 +6,17 @@ interface ImageProps {
 }
 
 export const SafeImage = ({ src, alt, className = '', priority = false }: ImageProps) => {
-  // These are handled by vite-imagetools at build time
-  const avif = `${src}?format=avif`;
-  const webp = `${src}?format=webp`;
+  // vite-imagetools generates a set of images at these specific widths
+  // The output is a string you can plug directly into srcset
+  const avifSet = `${src}?w=400;800;1200&format=avif&as=srcset`;
+  const webpSet = `${src}?w=400;800;1200&format=webp&as=srcset`;
 
   return (
     <picture className={className}>
-      <source srcSet={avif} type="image/avif" />
-      <source srcSet={webp} type="image/webp" />
+      <source srcSet={avifSet} type="image/avif" sizes="(max-width: 1200px) 100vw, 1200px" />
+      <source srcSet={webpSet} type="image/webp" sizes="(max-width: 1200px) 100vw, 1200px" />
       <img
-        src={src}
+        src={`${src}?w=800`} // Fallback for browsers without srcset support
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
