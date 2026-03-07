@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import { SafeImage } from "@/components/SafeImage";
+import { SafeBackgroundImage } from "@/components/SafeBackgroundImage";
 import gavelLawImage from "@/assets/gavel-law.png";
 import lawyerDocumentImage from "@/assets/lawyer-document.png";
 import { useEffect, useState } from "react";
@@ -71,9 +73,10 @@ const About = () => {
     <Layout>
       {/* Hero */}
       <section className="relative bg-primary py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
-        <div
+        <SafeBackgroundImage
+          src={gavelLawImage}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: `url(${gavelLawImage})` }}
+          priority={false}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-navy/90" />
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -92,12 +95,10 @@ const About = () => {
       {/* Mission Statement */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 bg-background overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: `url(${gavelLawImage})`,
-            opacity: 0.6
-          }}
+        <SafeBackgroundImage
+          src={gavelLawImage}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+          priority={false}
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-background/70 to-background" />
@@ -142,10 +143,11 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <AnimatedSection className="order-2 lg:order-1">
               <div className="relative mb-8 lg:mb-0">
-                <img
+                <SafeImage
                   src={lawyerDocumentImage}
                   alt="Legal representation and document review"
-                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  priority={false}
                 />
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10 hidden lg:block" />
               </div>

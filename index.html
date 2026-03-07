@@ -12,6 +12,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     
+    <!-- Preload Hero Image (LCP Optimization) -->
+    <!-- These will be processed by vite-imagetools - paths may need adjustment after first build -->
+    <link rel="preload" as="image" href="/src/assets/hero-background.png?format=avif" type="image/avif" fetchpriority="high" />
+    <link rel="preload" as="image" href="/src/assets/hero-background.png?format=webp" type="image/webp" fetchpriority="high" />
+    
     <title>Pickering Law Firm | Lawyers & Notary Public in the GTA</title>
     <meta name="description" content="Professional legal and notary public services across the Greater Toronto Area. Free 30-minute consultations. Call (905) 555-0100." />
     <meta name="author" content="Pickering Law Firm" />

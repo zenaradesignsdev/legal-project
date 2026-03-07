@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import { SafeImage } from "@/components/SafeImage";
 import sarahMitchellPhoto from "@/assets/sarah-mitchell.png";
 import davidChenPhoto from "@/assets/david-chen.png";
 
@@ -22,12 +23,17 @@ const Team = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center max-w-5xl mx-auto">
             <AnimatedSection>
               <div className="relative mb-8 lg:mb-0">
-                <img
+                <SafeImage
                   src={sarahMitchellPhoto}
                   alt="Sarah Mitchell — Principal & Founding Partner"
-                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
-                  style={{ objectPosition: '60% center' }}
+                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  priority={false}
                 />
+                <style>{`
+                  .relative.mb-8 picture img {
+                    object-position: 60% center;
+                  }
+                `}</style>
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10" />
               </div>
             </AnimatedSection>
@@ -89,10 +95,11 @@ const Team = () => {
             </AnimatedSection>
             <AnimatedSection className="order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="relative">
-                <img
+                <SafeImage
                   src={davidChenPhoto}
                   alt="David Chen — Partner"
-                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  priority={false}
                 />
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10" />
               </div>

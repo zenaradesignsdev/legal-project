@@ -3,6 +3,8 @@ import { Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import { SafeImage } from "@/components/SafeImage";
+import { SafeBackgroundImage } from "@/components/SafeBackgroundImage";
 import heroBackground from "@/assets/hero-background.png";
 import sarahMitchellPhoto from "@/assets/sarah-mitchell.png";
 import davidChenPhoto from "@/assets/david-chen.png";
@@ -31,9 +33,10 @@ const Index = () => {
       {/* Hero */}
       <section className="relative bg-primary min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-12 sm:py-16 md:py-0">
         {/* Background Image */}
-        <div 
+        <SafeBackgroundImage
+          src={heroBackground}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBackground})` }}
+          priority={true}
         />
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/70 via-navy/60 to-navy-light/70" />
@@ -88,19 +91,25 @@ const Index = () => {
               <div className="relative max-w-xs mx-auto lg:mx-0 pb-12 sm:pb-16 pr-8 sm:pr-12">
                 {/* Sarah Mitchell - Back Photo */}
                 <div className="relative z-10">
-                  <img
+                  <SafeImage
                     src={sarahMitchellPhoto}
                     alt="Sarah Mitchell — Principal & Founding Partner"
-                    className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
-                    style={{ objectPosition: '60% center' }}
+                    className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5]"
+                    priority={false}
                   />
+                  <style>{`
+                    .relative.z-10 picture img {
+                      object-position: 60% center;
+                    }
+                  `}</style>
                 </div>
                 {/* David Chen - Front Photo (Overlapping) */}
                 <div className="absolute -bottom-12 sm:-bottom-16 -right-4 z-20 w-[60%]">
-                  <img
+                  <SafeImage
                     src={davidChenPhoto}
                     alt="David Chen — Partner"
-                    className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
+                    className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5]"
+                    priority={false}
                   />
                 </div>
                 {/* Decorative Element */}
@@ -132,12 +141,10 @@ const Index = () => {
       {/* Practice Areas */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 bg-secondary overflow-hidden">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: `url(${gavelLawImage})`,
-            opacity: 0.35
-          }}
+        <SafeBackgroundImage
+          src={gavelLawImage}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35"
+          priority={false}
         />
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/80 via-secondary/90 to-secondary" />
@@ -173,10 +180,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <AnimatedSection className="order-2 lg:order-1 mb-8 lg:mb-0">
               <div className="relative">
-                <img
+                <SafeImage
                   src={lawyerDocumentImage}
                   alt="Professional legal representation"
-                  className="rounded-xl sm:rounded-2xl shadow-xl w-full object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
+                  priority={false}
                 />
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10 hidden lg:block" />
               </div>
