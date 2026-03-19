@@ -143,12 +143,14 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
             <AnimatedSection className="order-2 lg:order-1">
               <div className="relative mb-8 lg:mb-0">
-                <SafeImage
-                  src={lawyerDocumentImage}
-                  alt="Legal representation and document review"
-                  className="rounded-xl sm:rounded-2xl shadow-xl object-cover aspect-[4/5] max-w-md mx-auto lg:max-w-none"
-                  priority={false}
-                />
+                <div className="aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden rounded-xl sm:rounded-2xl shadow-xl">
+                  <SafeImage
+                    src={lawyerDocumentImage}
+                    alt="Legal representation and document review"
+                    className="w-full h-full object-cover"
+                    priority={false}
+                  />
+                </div>
                 <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 bg-gold/20 rounded-xl sm:rounded-2xl -z-10 hidden lg:block" />
               </div>
             </AnimatedSection>
